@@ -9,7 +9,7 @@ ARG SHELL=/bin/zsh
 ARG CONDA_DIR=/opt/conda
 ENV PATH=$CONDA_DIR/bin:$PATH
 RUN microdnf update -y --enablerepo ol8_baseos_latest && \
-   microdnf install -y shadow-utils zsh && \
+   microdnf install -y shadow-utils findutils zsh && \
    microdnf clean all && \
    groupadd ${NB_GROUP} && \   
    useradd -G ${NB_GROUP} -s ${SHELL} ${NB_USER} && \
@@ -19,7 +19,7 @@ RUN microdnf update -y --enablerepo ol8_baseos_latest && \
    /tmp/Miniconda3-latest-Linux-x86_64.sh -b -p ${CONDA_DIR} && \
    rm /tmp/Miniconda3-latest-Linux-x86_64.sh && \
    chgrp -R ${NB_GROUP} ${CONDA_DIR} && \
-   chmod 770 -R ${CONDA_DIR}
+   chmod 770 -R ${CONDA_DIR} 
 USER ${NB_USER}
 RUN  source ${CONDA_DIR}/bin/activate &>/dev/null && \
     conda init zsh
