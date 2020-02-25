@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM container-registry.oracle.com/os/oraclelinux:8-slim AS builder
+FROM  container-registry.oracle.com/os/oraclelinux:8-slim AS builder
 LABEL MAINTAINER="Manuel Gonzalez Blanco <manuel.gonzalez.freelancer@gmail.com>"
 LABEL stage=builder
 ARG TARGETPLATFORM
