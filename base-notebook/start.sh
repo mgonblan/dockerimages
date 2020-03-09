@@ -6,7 +6,7 @@ set -e
 
 # Exec the specified command or fall back on bash
 if [ $# -eq 0 ]; then
-    cmd=( "bash" )
+    cmd=( ${SHELL} )
 else
     cmd=( "$@" )
 fi

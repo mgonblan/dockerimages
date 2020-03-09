@@ -19,7 +19,7 @@ case $BUILDPLATFORM in \
  rm -rf /tmp/* && \
      apk add --no-cache --upgrade xz xz-dev && \
     addgroup -S ${NB_GROUP} && \
-    adduser --shell ${SHELL} -S ${NB_USER} --ingroup ${NB_GROUP} && \
+    adduser -S ${NB_USER} --ingroup ${NB_GROUP} && \
     chgrp -R ${NB_GROUP} ${CONDA_DIR} && \
-    chmod 770 -R ${CONDA_DIR} 
+    chmod 770 -R ${CONDA_DIR}
 USER ${NB_USER}

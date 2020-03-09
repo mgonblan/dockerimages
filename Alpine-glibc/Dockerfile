@@ -1,4 +1,5 @@
 FROM --platform=$BUILDPLATFORM alpine:latest AS build
+LABEL stage="build"
 ARG TARGETPLATFORM
 ARG BUILDPLATFORM
 
